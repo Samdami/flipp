@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>About | Cash Flip</title>
+    <link rel="stylesheet" type="text/css" href="../static/about.css">
+  </head>
+  <body>
+    <header>
+        <h1>Cash Flip</h1>
+        <nav>
+          <ul>
+            <li><a href="{{url_for('index')}}">Home</a></li>
+                            <li><a href="{{url_for('about')}}">About</a></li>
+                            <li><a href="{{url_for('contact')}}">Contact</a></li>
+                            <li><a href="{{url_for('login')}}" class="button large fit">Log In</a></li>
+                            <li><a href="{{url_for('register')}}">Sign Up</a></li>
+                            {% if current_user.is_authenticated %}
+                                <li><a href="{{url_for('payment')}}">Add Payment</a></li>
+                                <li><a href="{{url_for('logout')}}">Log Out</a></li>
+                            {% endif %}
+          </ul>
+        </nav>
+      </header>
+    <main>
+      <section>
+        <h1>About Cash Flip</h1>
+        <p>Cash Flip is a website that helps you manage your personal finances and investments. Our goal is to empower people to take control of their money and achieve their financial goals.</p>
+      </section>
+      <section>
+        <h2>Our Team</h2>
+        <ul>
+          <li>John Doe - Founder and CEO</li>
+          <li>Jane Smith - Chief Financial Officer</li>
+          <li>Bob Johnson - Chief Technology Officer</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Our Mission</h2>
+        <p>Our mission is to provide our users with the tools and resources they need to make informed financial decisions and achieve financial freedom. We believe that everyone should have access to the knowledge and tools necessary to take control of their finances, and we're committed to making that a reality.</p>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2023 Cash Flip. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

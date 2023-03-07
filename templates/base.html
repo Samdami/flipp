@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cashflip Site</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body class="is-preload">
+        </header>
+        <main class="container">
+            {% block content %}
+            {% endblock content %}
+          </main>
+           <div id="wrapper">
+
+            <!-- Header -->
+                <header id="header">   
+                    <h1><a href="{{url_for('index')}}">Cashflip Site</a></h1>
+                    <nav class="links">
+                        <ul>
+                            <li><a href="{{url_for('index')}}">Home</a></li>
+                            <li><a href="{{url_for('about')}}">About</a></li>
+                            <li><a href="{{url_for('contact')}}">Contact</a></li>
+                            <li><a href="{{url_for('login')}}" class="button large fit">Log In</a></li>
+                            <li><a href="{{url_for('register')}}">Sign Up</a></li>
+                            {% if current_user.is_authenticated %}
+                                <li><a href="{{url_for('payment')}}">Add Payment</a></li>
+                                <li><a href="{{url_for('logout')}}">Log Out</a></li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </header>
+
+                <main>
+                    <h2>Welcome to Cashflip!</h2>
+                    <p>We help you manage your finances.</p>
+                    <p>Here you can flip your cash and earn more.</p>
+                    <p id="result"></p>
+                    <form id="cashflip-form">
+                      <label for="amount">Enter amount:</label>
+                      <input type="text" id="amount" name="amount" required>
+                      <!-- <input type="number" id="bet" name="bet"> -->
+                      <br>
+                      <button type="submit" id="cashflip-btn"><a href="{{url_for('payment')}}"></a> Flip Cash</button>
+                    </form>
+                    <img src="../static/pics 1.webp" alt="image" />
+                    <h2 style="text-align: center;"
+                    class="p1">Who we are what we do</h2>
+                    <h2 style="text-align: center;" class="p1">
+                    <span class="s1">We specialize in finace</span></span></h2>
+                    <p style="text-align: center;" class="p1"><span class="s1">We are a financial corporation with the aim of helping people make the right use of their money through investing online and getting 98% profit in 24 hours. Having started this since 2016, FLIP CASH #FLIP_IT ALL hard currency like Bitcoin which brings high profit, we want our members to be a part of the profit through their investment. A lot of people have been deceived and become victims of scammers. We have come to stop the trend.</span></p>
+                    <div id="Id99e38cc3417451db0062a5fbf08e9b1_sys_txt" systemelement="true" class="sys_txt sys_text_widget new-text-widget"><h3 style="text-align: center;" class="p1"><span class="s1">Profitable Investments</span></h3>
+                        <p>We offer you profitable and legitimate flip investment, highly reliable, and trustworthy</p>
+                        <p>With faiths flip cash, all your investment and donations are safe with us......</p>
+                        <p style="text-align: center;" class="p1"><br></p></div>
+                </main>
+                <div class="coin"></div>
+
+                
+                  
+    <footer>
+        <p>&copy; 2023 Cashflip Inc.</p>
+    </footer>
+           </div>
+    <script src="../static/script.js"></script>
+</body>
+</html>

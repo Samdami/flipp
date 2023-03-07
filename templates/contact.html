@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Cash Flip</title>
+    <link rel="stylesheet" href="../static/contact.css">
+  </head>
+  <body>
+    <header>
+      <h1>Cash Flip</h1>
+      <nav>
+        <ul>
+          <li><a href="{{url_for('index')}}">Home</a></li>
+                            <li><a href="{{url_for('about')}}">About</a></li>
+                            <li><a href="{{url_for('contact')}}">Contact</a></li>
+                            <li><a href="{{url_for('login')}}" class="button large fit">Log In</a></li>
+                            <li><a href="{{url_for('register')}}">Sign Up</a></li>
+                            {% if current_user.is_authenticated %}
+                                <li><a href="{{url_for('payment')}}">Add Payment</a></li>
+                                <li><a href="{{url_for('logout')}}">Log Out</a></li>
+                            {% endif %}
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h2>Contact Us</h2>
+      <p>Send us a message and we'll get back to you as soon as possible.</p>
+      <form>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </main>
+    <footer>
+      <p>&copy; 2023 Cash Flip. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

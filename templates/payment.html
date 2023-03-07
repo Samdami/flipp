@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="POST" action="/add_payment_method">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="card_number">Card Number:</label>
+    <input type="text" id="card_number" name="card_number" required>
+
+    <label for="exp_month">Exp Month:</label>
+    <input type="text" id="exp_month" name="exp_month" required>
+
+    <label for="exp_year">Exp Year:</label>
+    <input type="text" id="exp_year" name="exp_year" required>
+
+    <label for="cvv">CVV:</label>
+    <input type="text" id="cvv" name="cvv" required>
+
+    <input type="submit" value="Add Payment Method">
+</form>
+{% endblock content %}
