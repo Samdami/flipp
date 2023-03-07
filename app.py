@@ -7,7 +7,6 @@ import os
 base_dir = os.path.dirname(os.path.realpath(__file__))
 
 app = Flask(__name__)
-server = app.server
 
 app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///' + os.path.join(base_dir, 'my_login.db')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///payment.db'
@@ -179,4 +178,4 @@ def create_tables():
 
 
 if __name__ == '__main__':
-    app.run_server(debug=false)
+    app.run(debug=True)
